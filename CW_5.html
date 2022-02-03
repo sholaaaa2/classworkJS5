@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    div{
+      width: 300px;
+      margin: auto;
+      border: 2px solid black;
+      box-shadow: 0 0 5px black;
+      text-shadow: 1px 1px 2px rgb(96, 96, 96);
+      transition: .5s all
+    }
+    div:hover{transform: scale(1.1);box-shadow: 0 2px 10px black;}
+  </style>
+</head>
+<body>
+  <script>
+    var money = {
+      name: user,
+      bitcoin:{
+        namev:"Bitcoin",
+        logo: "&#10059;",
+        mon: 3,
+        cost: 50000
+      },
+      ethereum:{
+        namev:"Ethereum",
+        logo: "&#9728;",
+        mon: 1,
+        cost: 35000
+      },
+      stellar:{
+        namev:"Stellar",
+        logo: "&#9730;",
+        mon: 5,
+        cost: 43000
+      },
+      say: function (a) {
+        document.write(`<div>Добрый день, ${this.name} ! На вашем балансе ${a.namev} ${a.logo} осталось ${a.mon} монет, если вы сегодня продадите их то, получите ${a.mon * a.cost} грн.</div>`)
+      }
+    };
+
+    var user = prompt('Введите ваше имя');
+    money.name = user;
+    var b = prompt('Введите название валюты(Bitcoin, Ethereum, Stellar)');
+    b = b.toLowerCase();
+
+    money.say(money[b]);
+  </script>
+</body>
+</html>
